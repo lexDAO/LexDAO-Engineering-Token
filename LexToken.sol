@@ -928,17 +928,17 @@ contract LexToken is GovernorRole, ERC20Burnable, ERC20Capped, ERC20Mintable, ER
         uint256 initialSaleAmount,
         address _governor,
         address payable _owner,
-	      bytes32 _stamp,
-	      bool _forSale,
+	bytes32 _stamp,
+	bool _forSale,
         bool _governed
     ) public ERC20(name, symbol) ERC20Capped(cap) {
         ethPurchaseRate = _ethPurchaseRate;
         owner = _owner;
-	      stamp = _stamp;
-	      forSale = _forSale;
+	stamp = _stamp;
+	forSale = _forSale;
         governed = _governed;
 
-	      _addGovernor(_governor);
+	_addGovernor(_governor);
         _addMinter(owner);
         _addPauser(owner);
         _mint(owner, initialOwnerAmount);
